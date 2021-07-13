@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 uppers = [500, 1000, 2000] # 三種上限。證明多次觀測的結果，對上限不敏感
-observes = [60 ,30 ,90] # 將多次觀測到的數據
+observes = [60 ,30 ,90] # 多次觀測到的數據
 
 for uppper in uppers:
     num_in_train = list(range(1, uppper+1))
@@ -24,5 +24,8 @@ for uppper in uppers:
     print("posteriori avg:{}".format(avg))
 
     # Visualization
+    plt.title("Upper = {}".format(uppper))
+    plt.xlabel("Num of train")
+    plt.ylabel("Probability")
     plt.plot(probability)
     plt.show()
